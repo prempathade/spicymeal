@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Spicy Meal</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+   <style>
+    .img-fluid{
+        height: 350px;
+    }
+    .nav-link{
+        color: black;
+    }
+  
+   </style>
+</head>
+<body>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="veg logo.jpg" alt="Logo" style="height: 80px; width: 130px;"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav position-relative">
+        <li class="nav-item"><a class="nav-link text-danger" href="index.html"><i class="fas fa-house"></i> Home</a></li>
+        <li class="nav-item"> <a class="nav-link" href="offer.html"><i class="fa-solid fa-percent"></i>Offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-user-tie"></i> Login</a></li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="cart.html"><i class="fas fa-cart-shopping"></i> Cart</a>
+          <span id="cart-count" class="cart-count">0</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Restaurant Info Section -->
+<div class="container mt-4">
+  <div class="bg-white p-4 rounded shadow-sm">
+    <h3 class="fw-bold">Burger Junction</h3>
+    <p class="mb-1">
+      <span class="badge bg-success">⭐ 4.7 (4.7K+ ratings)</span>
+      <span class="ms-3 text-muted">₹320</span>
+    </p>
+    <p class="mb-1 text-danger">Burger Junction</p>
+    <p class="text-muted">📍 Outlet: Burger Junction Dombivali | ⏱ Delivery: 40–50 mins</p>
+  </div>
+</div>
+
+
+<!-- Deals for You Section -->
+<div class="container mt-4">
+  <h5 class="fw-bold mb-3">Deals for you</h5>
+  <div class="row g-3">
+
+    <!-- Deal 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="p-3 bg-light rounded shadow-sm border d-flex align-items-center">
+        <span class="badge bg-warning text-dark me-3">Deal of Day</span>
+        <div>
+          <h6 class="mb-0">Items at ₹170</h6>
+          <small class="text-muted">On select items</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deal 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="p-3 bg-light rounded shadow-sm border d-flex align-items-center">
+        <span class="badge bg-danger me-3"><i class="fa-solid fa-percent"></i></span>
+        <div>
+          <h6 class="mb-0">Flat ₹125 Off</h6>
+          <small class="text-muted">Use code: <strong>FLAVORFUL</strong></small>
+        </div>
+      </div>
+    </div>
+<!-- Deal 3 -->
+      <div class="col-md-6 col-lg-4">
+      <div class="p-3 bg-light rounded shadow-sm border d-flex align-items-center">
+        <span class="badge bg-danger me-3"><i class="fa-solid fa-percent"></i></span>
+        <div>
+          <h6 class="mb-0">Flat ₹20 Off</h6>
+          <small class="text-muted">Use code: <strong>DELICIOUS</strong></small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Food Detail Section -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <img src="burger-6165330_640.jpg" style="width: 500px;" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h2>Burger Veg(XL size Bun)</h2>
+        <p>⭐ 4.9</p>
+        <p>₹170</p>
+        <p>Our Original Whopper with Crunchy Veg Patty, Onions, Lettuce, Tomatoes (Seasonal), Gherkins, Creamy And Smoky Sauces With Xxl Buns.</p>
+        <button class="btn btn-danger" onclick="addToCart('Burger Veg(XL size Bun)', 399)">Add to Cart</button>
+      </div>
+
+    <div class="col-md-6 mb-4">
+        <img src="big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon.jpg" style="width: 500px;" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h2>Crispy Veg Burger</h2>
+        <p>⭐ 4.7</p>
+        <p>₹150</p>
+        <p>Masaledar Veg Patty, Onion & Our Signature Tomato Herby Sauce.</p>
+        <button class="btn btn-danger" onclick="addToCart('Crispy Veg Burger', 150)">Add to Cart</button>
+      </div>
+
+  <div class="col-md-6 mb-4">
+        <img src="fast-food-7158255_640.jpg" style="width: 500px;" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h2>Veg Makhani Burst</h2>
+        <p>⭐ 4.8</p>
+        <p>₹190</p>
+        <p>Masaledar Veg Patty, Onion & Our Signature Tomato Herby Sauce.</p>
+        <button class="btn btn-danger" onclick="addToCart('Veg Makhani Burst', 190)">Add to Cart</button>
+      </div>
+
+       <div class="col-md-6 mb-4">
+        <img src="burger-3946012_640.jpg" style="width: 500px;" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h2>Veg Makhani Burst + Extra Crunchy Veg Whopper Deluxe</h2>
+        <p>⭐ 4.8</p>
+        <p>₹210</p>
+        <p>Veg Makhani Burst + Lite Extra Crunchy Veg Whopper Deluxe.</p>
+        <button class="btn btn-danger" onclick="addToCart('Veg Makhani Burst + Extra Crunchy Veg Whopper Deluxe', 210)">Add to Cart</button>
+      </div>
+      
+        <div class="col-md-6 mb-4">
+        <img src="burger-996037_640.jpg" style="width: 500px;" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h2>Original Whopper Veg</h2>
+        <p>⭐ 4.6</p>
+        <p>₹260</p>
+        <p>Our Original Whopper with Crunchy Veg Patty, Onions, Lettuce, Tomatoes (Seasonal), Gherkins, Creamy And Smoky Sauces.</p>
+        <button class="btn btn-danger" onclick="addToCart('Original Whopper Veg', 260)">Add to Cart</button>
+      </div>
+
+    </div>
+  </div>
+
+
+    <script>
+    // Add item to cart (localStorage)
+    function addToCart(item, price){
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cartCount = cart.length;
+  document.getElementById("cart-count").innerText = cartCount;
+      cart.push({name: item, price: price});
+      localStorage.setItem("cart", JSON.stringify(cart));
+      document.getElementById("cart-count").innerText = cart.length;
+      alert(item + " added to cart!");
+    }
+  </script>
+</body>
+</html>
