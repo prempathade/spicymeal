@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dineout Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+.nav-link{
+    color: black;
+}
+    /* ---------- Header ---------- */
+   /* Banner */
+.restaurant-header {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: url('hotel.jpg') center/cover no-repeat;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+/* Info box default (desktop overlay style) */
+.restaurant-info {
+  background: rgba(255,255,255,0.95);
+  padding: 18px;
+  border-radius: 12px;
+  max-width: 28%;
+  left: 50px;
+  margin-top: -230px; /* pulls it up over the banner */
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+}
+
+/* Text styling */
+.restaurant-info h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.restaurant-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #444;
+}
+.rating {
+  color: #28a745;
+  font-weight: bold;
+}
+.status {
+  color: red;
+  font-weight: bold;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 12px;
+}
+.buttons button {
+  background: #fc8019;
+  border: none;
+  padding: 8px 14px;
+  color: #fff;
+  border-radius: 8px;
+  margin-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons button:hover {
+  background: #e56c0a;
+}
+
+/* -------- Mobile Fix -------- */
+@media (max-width: 768px) {
+  .restaurant-header {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .restaurant-info {
+    margin-top: 15px; /* sits below banner */
+    max-width: 100%;
+    margin-left: -50px;
+    padding: 15px;
+    
+  }
+
+  .restaurant-info h2 {
+    font-size: 18px;
+  }
+  .restaurant-info p {
+    font-size: 13px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .buttons button {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
+  .card{
+    margin-bottom: -20px;
+  }
+ 
+}
+
+
+    .rating {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .status {
+      color: red;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    .buttons button {
+      background: #ff5722;
+      border: none;
+      padding: 8px 14px;
+      color: #fff;
+      border-radius: 6px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    /* ---------- Offers ---------- */
+    .offers {
+      margin: 70px 20px 20px;
+    }
+
+    .offers h3 {
+      margin-bottom: 15px;
+    }
+
+    .offer-cards {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+    }
+
+    .offer-card {
+      min-width: 200px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 14px;
+    }
+
+    /* ---------- Additional Offers ---------- */
+    .additional-offers {
+      margin: 20px;
+    }
+
+    .additional-offers h3 {
+      margin-bottom: 15px;
+    }
+
+    .add-offer-cards {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+    }
+
+    .add-offer-card {
+      min-width: 220px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* ---------- Food Section ---------- */
+    .food-section {
+      margin: 20px;
+    }
+
+    .food-section h3 {
+      margin-bottom: 15px;
+    }
+
+    .food-images {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+    }
+
+    .food-images img {
+      width: 200px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .food-images img:hover {
+      transform: scale(1.05);
+    }
+
+   
+
+ /* Tabs */
+    .nav-tabs .nav-link {
+      font-weight: 600;
+      color: #333;
+    }
+    .nav-tabs .nav-link.active {
+      color: #fc8019;
+      border-bottom: 3px solid #fc8019;
+    }
+    .nav-link{
+        color: black;
+    }
+
+
+    /* Restaurant Cards */
+    .card {
+      border-radius: 15px;
+      overflow: hidden;
+     margin-top: 50px;
+      transition: transform 0.2s;
+      border: 1px solid #eee;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Offer strips */
+    .offer-strip {
+      background: #e6f9ed;
+      color: #0f8a3f;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin: 5px 0;
+      font-weight: 500;
+    }
+    .offer-strip.secondary {
+      background: #f2f8ff;
+      color: #0366d6;
+    }
+
+     .cart-count {
+      background: red;
+      color: white;
+      font-size: 12px;
+      border-radius: 50%;
+      padding: 2px 6px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+    .nav-item{
+  padding-left: 160px;
+  font-size: 20px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+p{
+  color: black;
+}
+
+
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="veg logo.jpg" alt="Logo" style="height: 80px; width: 130px;"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav position-relative">
+        <li class="nav-item"><a class="nav-link text-danger" href="index.html"><i class="fas fa-house"></i> Home</a></li>
+       <li class="nav-item"> <a class="nav-link" href="offer.html"><i class="fa-solid fa-percent"></i>Offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fas fa-user-tie"></i> Login</a></li>
+        <li class="nav-item position-relative">
+          <a class="nav-link" href="cart.html"><i class="fas fa-cart-shopping"></i> Cart</a>
+          <span id="cart-count" class="cart-count">0</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-4">
+    <h1>Seven Kitchen</h1>
+     <!-- Order Online / Dineout Tabs -->
+  <ul class="nav nav-tabs" id="orderTabs">
+    <li class="nav-item1">
+      <a class="nav-link active" data-tab="online" href="#">Dineout</a>
+    </li>
+    <li class="nav-item1">
+      <a class="nav-link" data-tab="dineout" href="#">Photos</a>
+    </li>
+    <li class="nav-item1">
+      <a class="nav-link" data-tab="menu" href="">Menu</a>
+    </li>
+  </ul>
+<br>
+  <div class="container">
+  <!-- Restaurant Banner -->
+  <div class="restaurant-header"></div>
+
+  <!-- Restaurant Info (kept outside for flexibility) -->
+  <div class="restaurant-info">
+    <h2>Seven Kitchens, South Indian</h2>
+    <p><span class="rating">★ 4.7 (475)</span> • ₹1500 for two</p>
+    <p><i class="fa-solid fa-location-dot"></i> 10th Floor, RR Towers, Undri Road ,Pune</p>
+    <p class="status">Closed • Opens at 12PM</p>
+    <div class="buttons">
+      <button><i class="fa-solid fa-calendar"></i> Book Table</button>
+      <button><i class="fa-solid fa-phone"></i> Call</button>
+      <button><i class="fa-solid fa-location-dot"></i> Direction</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Dineout Content -->
+  <div id="tab-dineout" class="tab-content mt-4 d-none">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+          <img src="hotel.jpg" class="card-img-top" alt="Restaurant">
+          </div>
+        </div>
+        
+<div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+          <img src="hotel2.jpg" class="card-img-top" alt="Restaurant">
+          </div>
+        </div>
+
+    <div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+          <img src="hotel3.jpg" class="card-img-top" alt="Restaurant">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+  <!-- Menu Content -->
+  <div id="tab-menu" class="tab-content mt-4 d-none">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+            <a href="amelia.html">
+          <img src="menu-1.jpg" class="card-img-top" alt="Restaurant">
+            </a>
+          </div>
+        </div>
+        
+<div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+              <a href="amelia.html">
+          <img src="menu2.jpg" class="card-img-top" alt="Restaurant">
+              </a>
+          </div>
+        </div>
+
+    <div class="col-md-4">
+        <div class="card" data-rating="4.1" data-veg="yes">
+              <a href="amelia.html">
+          <img src="menu3.jpg" class="card-img-top" alt="Restaurant">
+              </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+
+<!-- Offers Section -->
+  <div class="offers">
+    <h3>Offers</h3>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <b>Happy Hours: Flat 20% Off</b>
+        <p>@₹20/guest</p>
+        <small>Pre-book offer • Limited slots</small>
+      </div>
+      <div class="offer-card">
+        <b>Flat 15% Off</b>
+        <p>@₹115/guest</p>
+        <small>Pre-book offer • Limited slots</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Offers -->
+  <div class="additional-offers">
+    <h3>Additional Offers</h3>
+    <div class="add-offer-cards">
+      <div class="add-offer-card">Flat 10% Cashback <br> Above ₹100</div>
+      <div class="add-offer-card">10% off upto ₹500 <br> HDFC Credit Card</div>
+      <div class="add-offer-card">10% off <br> More bank offers</div>
+    </div>
+  </div>
+
+  <!-- Food Section -->
+  <div class="food-section">
+    <h3>Food</h3>
+    <div class="food-images">
+      <a href="amelia.html"><img src="menu-1.jpg" alt="Menu 1"></a>
+      <a href="amelia.html"><img src="menu2.jpg" alt="Menu 2"></a>
+      <a href="amelia.html"><img src="menu3.jpg" alt="Menu 3"></a>
+    </div><br>
+    <h3>Location</h3>
+    <p>Narang Towers, Palm Road,Pune</p>
+    <br>
+     <h3>Timigs</h3>
+    <p>OPEN TILL 11PM</p>
+    <br>
+    <h4>Cuisines</h4>
+    <p>Amelia, North Indian</p>
+  </div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+  
+<script>
+    // Tab Switching
+  document.querySelectorAll("#orderTabs .nav-link").forEach(tab => {
+    tab.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelectorAll("#orderTabs .nav-link").forEach(t => t.classList.remove("active"));
+      this.classList.add("active");
+
+      let selectedTab = this.getAttribute("data-tab");
+      document.querySelectorAll(".tab-content").forEach(content => content.classList.add("d-none"));
+      document.getElementById("tab-" + selectedTab).classList.remove("d-none");
+    });
+  });
+</script>
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</body>
+</html>
